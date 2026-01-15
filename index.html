@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Just Coffee | Student Brewed</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Hero section -->
+    <header>
+        <h1>Just Coffee</h1>
+        <p>
+            Affordable, honest coffee brewed by students who understand
+            deadlines, exams, and late nights.
+        </p>
+        <button onclick="scrollToMenu()">See the Menu</button>
+    </header>
+
+    <!-- About section -->
+    <section>
+        <h2>About the Shop</h2>
+        <p class="center-text">
+            Just Coffee is a student-run coffee stand created as a school project.
+            Its purpose is to provide a simple service while giving students
+            experience in teamwork and basic business operations.
+        </p>
+    </section>
+
+    <!-- Features section -->
+    <section>
+        <h2>What Makes Us Different</h2>
+
+        <div class="cards">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+                <div class="card-content">
+                    <h3>Student Brewed</h3>
+                    <p>Prepared and served by students trained in basic brewing.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+                <div class="card-content">
+                    <h3>Simple Menu</h3>
+                    <p>One product keeps quality consistent and prices fair.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df">
+                <div class="card-content">
+                    <h3>Campus Friendly</h3>
+                    <p>Designed around student schedules and routines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu section -->
+    <section class="menu" id="menu">
+    <h2>Menu</h2>
+    <p><strong>Fresh Brewed Coffee</strong></p>
+    <p>Hot or Iced</p>
+
+    <div class="menu-items">
+        <div class="menu-item">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+            <p>Classic Black</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+            <p>Milk Coffee</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="https://images.unsplash.com/photo-1521302080334-4bebac2763a6">
+            <p>Sugar Coffee</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772">
+            <p>Ice Coffee</p>
+        </div>
+    </div>
+
+    <button onclick="toggleDetails()">More Info</button>
+
+    <p id="details" class="hidden">
+        All flavors are made using the same base brew.
+        Adjusted only with milk, sugar, or ice to keep
+        preparation simple and consistent.
+    </p>
+</section>
+
+    <!-- Contact section -->
+    <section>
+        <h2>Contact Us</h2>
+
+        <div class="contact">
+            <form onsubmit="return showFormMessage()">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="4" placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+
+            <p id="formMessage" class="hidden">
+                **This contact form is for demonstration purposes only.**
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>School Project Website</p>
+        <p>© 2026 Just Coffee</p>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
