@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Just Coffee | Student Brewed</title>
+    <title>Treat a Cup | Student Brewed</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Link to external CSS file -->
@@ -12,7 +12,7 @@
 
     <!-- Header / Hero section -->
     <header>
-        <h1>Just Coffee</h1>
+        <h1>Treat a Cup</h1>
         <p>
             Affordable, honest coffee brewed by students who understand
             deadlines, exams, and late nights.
@@ -36,7 +36,7 @@
 
         <div class="cards">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+                <img src="ao.jpg">
                 <div class="card-content">
                     <h3>Student Brewed</h3>
                     <p>Prepared and served by students trained in basic brewing.</p>
@@ -44,7 +44,7 @@
             </div>
 
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+                <img src="tilt.jpg">
                 <div class="card-content">
                     <h3>Simple Menu</h3>
                     <p>One product keeps quality consistent and prices fair.</p>
@@ -52,7 +52,7 @@
             </div>
 
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df">
+                <img src="mrem.jpg">
                 <div class="card-content">
                     <h3>Campus Friendly</h3>
                     <p>Designed around student schedules and routines.</p>
@@ -66,26 +66,50 @@
     <h2>Menu</h2>
     <p><strong>Fresh Brewed Coffee</strong></p>
     <p>Hot or Iced</p>
+    
+<button onclick="openOrder()">Place an Order</button>
+
+<div id="orderBox" class="order-box hidden">
+    <h3>Choose Your Coffee</h3>
+
+    <div class="options">
+        <label><input type="radio" name="coffee" value="Classic Black"> Classic Black</label>
+        <label><input type="radio" name="coffee" value="Milk"> Milk</label>
+        <label><input type="radio" name="coffee" value="Chocolate"> Chocolate</label>
+        <label><input type="radio" name="coffee" value="Tea"> Tea</label>
+    </div>
+
+    <h3>Sugar Level</h3>
+
+    <div class="options">
+        <label><input type="radio" name="sugar" value="0%"> 0%</label>
+        <label><input type="radio" name="sugar" value="25%"> 25%</label>
+        <label><input type="radio" name="sugar" value="50%"> 50%</label>
+        <label><input type="radio" name="sugar" value="100%"> 100%</label>
+    </div>
+
+    <button onclick="submitOrder()">Confirm Order</button>
+</div>
 
     <div class="menu-items">
         <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+            <img src="blackc.jpg">
             <p>Classic Black</p>
         </div>
 
         <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
-            <p>Milk Coffee</p>
+            <img src="milk.jpg">
+            <p>Milk</p>
         </div>
 
         <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1521302080334-4bebac2763a6">
-            <p>Sugar Coffee</p>
+            <img src="choco.jpg">
+            <p>Chocolate Drink</p>
         </div>
 
         <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772">
-            <p>Ice Coffee</p>
+            <img src="tea.jpg">
+            <p>Tea</p>
         </div>
     </div>
 
@@ -93,7 +117,7 @@
 
     <p id="details" class="hidden">
         All flavors are made using the same base brew.
-        Adjusted only with milk, sugar, or ice to keep
+        Adjusted only with milk, and sugar to keep
         preparation simple and consistent.
     </p>
 </section>
@@ -103,10 +127,10 @@
         <h2>Contact Us</h2>
 
         <div class="contact">
-            <form onsubmit="return showFormMessage()">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea rows="4" placeholder="Your Message"></textarea>
+<form onsubmit="submitContactForm(event)">
+                <input type="text" id="contactName" placeholder="Your Name" required>
+                <input type="email" id="contactEmail" placeholder="Your Email" required>
+                <textarea rows="4" id="contactMessage" placeholder="Your Message"></textarea>
                 <button type="submit">Send Message</button>
             </form>
 
@@ -118,8 +142,8 @@
 
     <!-- Footer -->
     <footer>
-        <p>School Project Website</p>
-        <p>© 2026 Just Coffee</p>
+        <p>Tepen's Project Web</p>
+        <p>© 2026 Treat a Cup</p>
     </footer>
 
     <!-- Link to external JavaScript file -->
