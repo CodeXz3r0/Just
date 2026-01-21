@@ -19,23 +19,44 @@ function showFormMessage() {
 function openOrder() {
     document.getElementById("orderBox").classList.remove("hidden");
 }
-
 function submitOrder() {
     const coffee = document.querySelector('input[name="coffee"]:checked');
     const sugar = document.querySelector('input[name="sugar"]:checked');
+    const ice = document.querySelector('input[name="ice"]:checked');
 
-    if (!coffee || !sugar) {
-        alert("Please select both a coffee type and sugar level.");
+    if (!coffee || !sugar || !ice) {
+        alert("Please complete all selections before ordering.");
         return;
     }
+
+    let basePrice = 0;
+
+    if (coffee.value === "Classic Black") {
+        basePrice = 20;
+    } else if (coffee.value === "Milk") {
+        basePrice = 30;
+    } else if (coffee.value === "Chocolate") {
+        basePrice = 45;
+    } else if (coffee.value === "Tea") {
+        basePrice = 20;
+    }
+
+    let icePrice = ice.value === "Yes" ? 5 : 0;
+    let total = basePrice + icePrice;
 
     alert(
         "ORDER RECEIPT\n\n" +
         "Coffee: " + coffee.value + "\n" +
-        "Sugar Level: " + sugar.value + "\n\n" +
+        "Base Price: ₱" + basePrice + "\n" +
+        "Sugar Level: " + sugar.value + "\n" +
+        "Ice: " + ice.value + "\n" +
+        "Ice Fee: ₱" + icePrice + "\n\n" +
+        "TOTAL: ₱" + total + "\n\n" +
         "Thank you for your order!\n"
     );
 }
+
+
 
 function submitContactForm(event) {
     event.preventDefault();
