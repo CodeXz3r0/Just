@@ -27,19 +27,19 @@ header p {
 }
 
 /* Buttons */
-button {
+button, .primary-btn {
     padding: 14px 35px;
     border: none;
-    background-color: #b5b5b5;
-    color: #1f1f1f;
+    border-radius: 6px;
+    background-color: #9f9f9f;
+    color: black;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    transition: background 0.3s, transform 0.2s;
 }
 
-button:hover {
-    background-color: #9f9f9f;
+button:hover, .primary-btn:hover {
+    transform: translateY(-2px);
 }
 
 /* Section layout */
@@ -65,7 +65,7 @@ h2 {
     color: #444;
 }
 
-/* Card layout */
+/* Cards */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -80,9 +80,7 @@ h2 {
     transition: transform 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-3px);
-}
+.card:hover { transform: translateY(-3px); }
 
 .card img {
     width: 100%;
@@ -96,55 +94,14 @@ h2 {
     text-align: center;
 }
 
-.card-content h3 {
-    color: #333;
-}
+.card-content h3 { color: #333; }
 
 /* Menu section */
-.menu {
-    text-align: center;
-}
+.menu { text-align: center; }
 
-.menu p {
-    color: #444;
-}
+.menu p { color: #444; }
 
-/* Contact form */
-.contact {
-    background-color: #fafafa;
-    padding: 40px;
-    border-radius: 6px;
-    max-width: 600px;
-    margin: auto;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-}
-
-.contact input,
-.contact textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background-color: #fdfdfd;
-    color: #2e2e2e;
-}
-
-/* Utility class */
-.hidden {
-    display: none;
-}
-
-/* Footer */
-footer {
-    background-color: #2b2b2b;
-    color: #cfcfcf;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-}
-
-/* Menu item grid */
+/* Menu items grid */
 .menu-items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -173,44 +130,220 @@ footer {
     font-weight: 500;
 }
 
-/* Order box */
+/* Order Box */
 .order-box {
-    margin-top: 30px;
+    background: #ffffff;
+    border-radius: 12px;
     padding: 30px;
-    background-color: #fafafa;
-    border-radius: 6px;
     max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    margin: 30px auto;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
     text-align: left;
 }
 
 .order-box h3 {
     margin-bottom: 15px;
-    color: #3a3a3a;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* Inputs and textareas inside order box */
+.order-box input[type="text"],
+.order-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+    background-color: #fdfdfd;
+    box-sizing: border-box;
+    display: block;
+}
+
+.order-box input[type="text"]:focus,
+.order-box textarea:focus {
+    outline: none;
+    border-color: #8a8a8a;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+}
+
+.order-box textarea {
+    resize: vertical;
+    min-height: 60px;
 }
 
 /* Radio options */
 .options {
-    display: grid;
-    gap: 10px;
-    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
 }
 
 .options label {
+    flex: 1 1 45%;
+    padding: 12px 15px;
+    background: #f7f7f7;
+    border-radius: 8px;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    color: #333;
+    gap: 8px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.options label:hover {
+    background: #e8e8e8;
+    transform: translateY(-2px);
 }
 
 .options input[type="radio"] {
     accent-color: #8a8a8a;
 }
 
-/* Utility */
-.hidden {
-    display: none;
+/* Payment Boxes */
+#ewalletBox, #cardBox {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
+
+#ewalletBox input, #cardBox input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+}
+
+/* More Info */
+.more-info-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Overlay receipt */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.receipt {
+    background: #fff;
+    width: 320px;
+    padding: 20px;
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: left;
+}
+
+.receipt h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.receipt p { margin: 6px 0; }
+
+.receipt .total {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.receipt button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #9f9f9f;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+/* Contact Form */
+.contact {
+    background-color: #fafafa;
+    padding: 40px;
+    border-radius: 6px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fdfdfd;
+}
+
+/* Footer */
+footer {
+    background-color: #2b2b2b;
+    color: #cfcfcf;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* Utility */
+.hidden { display: none; }
+
+/* Responsive */
+@media(max-width: 480px){
+    .options label { flex: 1 1 100%; }
+}
+
+/* Delivery dropdowns (Barangay & Sitio/Purok) *//* Style for dropdowns (barangay & sitio) */
+.order-box select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0 15px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fdfdfd;
+    font-size: 0.95rem;
+    appearance: none; /* removes default arrow on some browsers */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+/* Focus effect */
+.order-box select:focus {
+    outline: none;
+    border-color: #8a8a8a;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+}
+
+/* Optional: add a custom arrow */
+.order-box select {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+}
+
+.

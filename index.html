@@ -4,158 +4,182 @@
     <meta charset="UTF-8">
     <title>Treat a Cup | Student Brewed</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header / Hero section -->
-    <header>
-        <h1>Treat a Cup</h1>
-        <p>
-            Affordable, honest coffee brewed by students who understand
-            deadlines, exams, and late nights.
-        </p>
-        <button onclick="scrollToMenu()">See the Menu</button>
-    </header>
+<header>
+    <h1>Treat a Cup</h1>
+    <p>Affordable, honest coffee brewed by students who understand deadlines, exams, and late nights.</p>
+</header>
 
-    <!-- About section -->
-    <section>
-        <h2>About the Shop</h2>
-        <p class="center-text">
-            Just Coffee is a student-run coffee stand created as a school project.
-            Its purpose is to provide a simple service while giving students
-            experience in teamwork and basic business operations.
-        </p>
-    </section>
-
-    <!-- Features section -->
-    <section>
-        <h2>What Makes Us Different</h2>
-
-        <div class="cards">
-            <div class="card">
-                <img src="ao.jpg">
-                <div class="card-content">
-                    <h3>Student Brewed</h3>
-                    <p>Prepared and served by students trained in basic brewing.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="tilt.jpg">
-                <div class="card-content">
-                    <h3>Simple Menu</h3>
-                    <p>One product keeps quality consistent and prices fair.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="mrem.jpg">
-                <div class="card-content">
-                    <h3>Campus Friendly</h3>
-                    <p>Designed around student schedules and routines.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Menu section -->
-    <section class="menu" id="menu">
-    <h2>Menu</h2>
-    <p><strong>Fresh Brewed Coffee</strong></p>
-    <p>Hot or Iced</p>
-    
-<button onclick="openOrder()">Place an Order</button>
-
-<div id="orderBox" class="order-box hidden">
-    <h3>Choose Your Coffee</h3>
-
-    <div class="options">
-        <label><input type="radio" name="coffee" value="Classic Black"> Classic Black</label>
-        <label><input type="radio" name="coffee" value="Milk"> Milk</label>
-        <label><input type="radio" name="coffee" value="Chocolate"> Chocolate</label>
-        <label><input type="radio" name="coffee" value="Tea"> Tea</label>
-    </div>
-
-    <h3>Sugar Level</h3>
-
-    <div class="options">
-        <label><input type="radio" name="sugar" value="0%"> 0%</label>
-        <label><input type="radio" name="sugar" value="25%"> 25%</label>
-        <label><input type="radio" name="sugar" value="50%"> 50%</label>
-        <label><input type="radio" name="sugar" value="100%"> 100%</label>
-    </div>
-    
-    <h3>Ice Option</h3>
-
-<div class="options">
-    <label><input type="radio" name="ice" value="No"> No Ice</label>
-    <label><input type="radio" name="ice" value="Yes"> Add Ice (+5)</label>
-</div>
-
-
-    <button onclick="submitOrder()">Confirm Order</button>
-</div>
-
-    <div class="menu-items">
-        <div class="menu-item">
-            <img src="blackc.jpg">
-            <p>Classic Black</p>
-        </div>
-
-        <div class="menu-item">
-            <img src="milk.jpg">
-            <p>Milk</p>
-        </div>
-
-        <div class="menu-item">
-            <img src="choco.jpg">
-            <p>Chocolate Drink</p>
-        </div>
-
-        <div class="menu-item">
-            <img src="tea.jpg">
-            <p>Tea</p>
-        </div>
-    </div>
-
-    <button onclick="toggleDetails()">More Info</button>
-
-    <p id="details" class="hidden">
-        All flavors are made using the same base brew.
-        Adjusted only with milk, and sugar to keep
-        preparation simple and consistent.
+<section>
+    <h2>About the Shop</h2>
+    <p class="center-text">
+        Just Coffee is a student-run coffee stand created as a school project.
+        Its purpose is to provide a simple service while giving students
+        experience in teamwork and basic business operations.
     </p>
 </section>
 
-    <!-- Contact section -->
-    <section>
-        <h2>Contact Us</h2>
-
-        <div class="contact">
-<form onsubmit="submitContactForm(event)">
-                <input type="text" id="contactName" placeholder="Your Name" required>
-                <input type="email" id="contactEmail" placeholder="Your Email" required>
-                <textarea rows="4" id="contactMessage" placeholder="Your Message"></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-
-            <p id="formMessage" class="hidden">
-                **This contact form is for demonstration purposes only.**
-            </p>
+<section>
+    <h2>What Makes Us Different</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="ao.jpg" alt="Student Brewed">
+            <div class="card-content">
+                <h3>Student Brewed</h3>
+                <p>Prepared and served by students trained in basic brewing.</p>
+            </div>
         </div>
-    </section>
+        <div class="card">
+            <img src="tilt.jpg" alt="Simple Menu">
+            <div class="card-content">
+                <h3>Simple Menu</h3>
+                <p>One product keeps quality consistent and prices fair.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="mrem.jpg" alt="Campus Friendly">
+            <div class="card-content">
+                <h3>Campus Friendly</h3>
+                <p>Designed around student schedules and routines.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>Tepen's Project Web</p>
-        <p>© 2026 Treat a Cup</p>
-    </footer>
+<section class="menu" id="menu">
+    <h2>Menu</h2>
+    <p><strong>Fresh Brewed Coffee</strong></p>
+    <p>Hot or Iced</p>
 
-    <!-- Link to external JavaScript file -->
-    <script src="script.js"></script>
+    <button class="primary-btn" onclick="openOrder()">Place an Order</button>
 
+    <div id="orderBox" class="order-box hidden">
+
+        <h3>Choose Your Coffee</h3>
+        <div class="options">
+            <label><input type="radio" name="coffee" value="Classic Black"> Classic Black</label>
+            <label><input type="radio" name="coffee" value="Milk"> Milk</label>
+            <label><input type="radio" name="coffee" value="Chocolate"> Chocolate</label>
+            <label><input type="radio" name="coffee" value="Tea"> Tea</label>
+        </div>
+
+        <h3>Sugar Level</h3>
+        <div class="options">
+            <label><input type="radio" name="sugar" value="0%"> 0%</label>
+            <label><input type="radio" name="sugar" value="25%"> 25%</label>
+            <label><input type="radio" name="sugar" value="50%"> 50%</label>
+            <label><input type="radio" name="sugar" value="100%"> 100%</label>
+        </div>
+
+        <h3>Ice Option</h3>
+        <div class="options">
+            <label><input type="radio" name="ice" value="No"> No Ice</label>
+            <label><input type="radio" name="ice" value="Yes"> Add Ice (+₱5)</label>
+        </div>
+
+        <h3>Delivery Details</h3>
+        <input type="text" id="customerName" placeholder="Your Name" required>
+        <input type="text" id="contactNumber" placeholder="09XXXXXXXXX" required>
+
+        <label>Address</label><select id="barangay" required>
+    <option value="">Select Barangay</option>
+    <option value="Bagumbayan">Bagumbayan</option>
+    <option value="Cahig">Cahig</option>
+    <option value="Gugo">Gugo</option>
+    <option value="Ibabang Ilog">Ibabang Ilog</option>
+    <option value="Kalawitan">Kalawitan</option>
+    <option value="Lilio">Lilio</option>
+    <option value="Loob">Loob</option>
+    <option value="Lusacan">Lusacan</option>
+    <option value="Malabanan">Malabanan</option>
+    <option value="Mangyan">Mangyan</option>
+    <option value="Mayorga">Mayorga</option>
+    <option value="Maysapan">Maysapan</option>
+    <option value="Pangol">Pangol</option>
+    <option value="Poblacion I">Poblacion I</option>
+    <option value="Poblacion II">Poblacion II</option>
+    <option value="San Antonio">San Antonio</option>
+    <option value="San Isidro">San Isidro</option>
+    <option value="San Roque">San Roque</option>
+    <option value="Santa Cruz">Santa Cruz</option>
+    <option value="Santa Filomena">Santa Filomena</option>
+    <option value="Santo Domingo">Santo Domingo</option>
+    <option value="Santo Niño">Santo Niño</option>
+    <option value="Sapang Kawayan">Sapang Kawayan</option>
+    <option value="Tangkay">Tangkay</option>
+</select>
+
+<select id="sitio" required>
+    <option value="">Select Purok</option>
+    <option value="Purok 1">Purok 1</option>
+    <option value="Purok 2">Purok 2</option>
+    <option value="Purok 3">Purok 3</option>
+    <option value="Purok 4">Purok 4</option>
+    <option value="Purok 5">Purok 5</option>
+</select>
+        
+
+        <h3>Payment Method</h3>
+        <div class="options payment-options">
+            <label><input type="radio" name="payment" value="Cash" onclick="togglePayment()"> Cash on Delivery</label>
+            <label><input type="radio" name="payment" value="GCash" onclick="togglePayment()"> GCash</label>
+            <label><input type="radio" name="payment" value="PayMaya" onclick="togglePayment()"> PayMaya</label>
+            <label><input type="radio" name="payment" value="Card" onclick="togglePayment()"> Card</label>
+        </div>
+
+        <div id="ewalletBox" class="hidden">
+            <input type="text" id="ewalletNumber" placeholder="Mobile Number (09XXXXXXXXX)">
+        </div>
+
+        <div id="cardBox" class="hidden">
+            <input type="text" id="cardNumber" placeholder="Card Number (16 digits)">
+            <input type="text" id="expiry" placeholder="MM/YY">
+            <input type="text" id="cvv" placeholder="CVV">
+            <input type="text" id="location" placeholder="Billing Location (optional)">
+        </div>
+
+        <button type="button" class="primary-btn" onclick="submitOrder()">Confirm Order</button>
+    </div>
+</section>
+
+<div class="menu-items">
+    <div class="menu-item"><img src="blackc.jpg" alt=""><p>Classic Black</p></div>
+    <div class="menu-item"><img src="milk.jpg" alt=""><p>Milk</p></div>
+    <div class="menu-item"><img src="choco.jpg" alt=""><p>Chocolate Drink</p></div>
+    <div class="menu-item"><img src="tea.jpg" alt=""><p>Tea</p></div>
+</div>
+
+<div class="more-info-wrapper"><button onclick="toggleDetails()">More Info</button></div>
+<p id="details" class="hidden">All flavors are made using the same base brew. Adjusted only with milk, and sugar to keep preparation simple and consistent.</p>
+
+<section>
+    <h2>Contact Us</h2>
+    <div class="contact">
+        <form onsubmit="submitContactForm(event)">
+            <input type="text" id="contactName" placeholder="Your Name" required>
+            <input type="email" id="contactEmail" placeholder="Your Email" required>
+            <textarea rows="4" id="contactMessage" placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="formMessage" class="hidden">**This contact form is for demonstration purposes only.**</p>
+    </div>
+</section>
+
+<footer>
+    <p>Tepen's Project Web</p>
+    <p>© 2026 Treat a Cup</p>
+</footer>
+
+<div id="receiptOverlay" class="overlay hidden">
+    <div class="receipt">
+        <div id="receiptContent"></div>
+        <button onclick="closeReceipt()">Close</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
