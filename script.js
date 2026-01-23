@@ -22,6 +22,10 @@ function togglePayment() {
     if (payment === "Card") document.getElementById("cardBox").classList.remove("hidden");
 }
 
+const now = new Date();
+const timestamp = now.toLocaleString();
+
+
 // Submit order
 function submitOrder() {
     const coffee = document.querySelector('input[name="coffee"]:checked');
@@ -29,20 +33,30 @@ function submitOrder() {
     const ice = document.querySelector('input[name="ice"]:checked');
     const payment = document.querySelector('input[name="payment"]:checked');
 
-    const name = document.getElementById("customerName").value.trim();
-    const phone = document.getElementById("contactNumber").value.trim();
-    const barangay = document.getElementById("barangay").value;
-    const sitio = document.getElementById("sitio").value;
-
-    if (!coffee || !sugar || !ice || !payment || !name || !phone || !barangay || !sitio) {
+    if (!coffee || !sugar || !ice || !payment) {
         alert("Please complete all required fields.");
         return;
     }
+    const fullName = document.getElementById("fullName").value.trim();
+const street = document.getElementById("street").value.trim();
+const province = document.getElementById("province").value;
+const municipality = document.getElementById("municipality").value;
+const barangay = document.getElementById("barangay").value;
+const zip = document.getElementById("zip").value.trim();
+const recipientPhone = document.getElementById("recipientPhone").value.trim();
 
-    if (!/^\d{11}$/.test(phone)) {
-        alert("Phone number must be 11 digits.");
-        return;
-    }
+if (!fullName || !street || !province || !municipality || !barangay || !zip) {
+    alert("Please complete all shipping information.");
+    return;
+}
+
+if (!/^09\d{9}$/.test(recipientPhone)) {
+    alert("Contact number must be 11 digits and start with 09.");
+    return;
+}
+
+    
+
 
     let paymentDetails = "";
 
@@ -89,10 +103,10 @@ function submitOrder() {
 
     const receipt = `
         <h2>Order Receipt</h2>
-        <p>Customer: ${name}</p>
-        <p>Phone: ${phone}</p>
-        <p>Barangay: ${barangay}</p>
-        <p>Purok/Sitio: ${sitio}</p>
+        <p>Name: ${fullName}</p>
+        <p>Address: ${street}, ${barangay}, ${municipality}, ${province}</p>
+        <p>ZIP Code: ${zip}</p>
+        <p>Contact Number: ${recipientPhone}</p>
         <hr>
         <p>Coffee: ${coffee.value}</p>
         <p>Sugar Level: ${sugar.value}</p>
@@ -104,6 +118,7 @@ function submitOrder() {
         <p class="total">TOTAL: ₱${total.toFixed(2)}</p>
         <p>Payment Method: ${payment.value}</p>
         <p>${paymentDetails.replace(/\n/g, "<br>")}</p>
+        <p>Date & Time: ${timestamp}</p>
     `;
 
     document.getElementById("receiptContent").innerHTML = receipt;

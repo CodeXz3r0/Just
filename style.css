@@ -346,4 +346,11 @@ footer {
     background-size: 12px;
 }
 
-.
+.row {
+  display: flex;
+  gap: 12px;
+}
+
+.row select {
+  flex: 1;
+}

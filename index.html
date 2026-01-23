@@ -16,7 +16,7 @@
 <section>
     <h2>About the Shop</h2>
     <p class="center-text">
-        Treat a Cup is a student-run coffee stand created as a school project.
+        Just Coffee is a student-run coffee stand created as a school project.
         Its purpose is to provide a simple service while giving students
         experience in teamwork and basic business operations.
     </p>
@@ -79,48 +79,75 @@
             <label><input type="radio" name="ice" value="No"> No Ice</label>
             <label><input type="radio" name="ice" value="Yes"> Add Ice (+₱5)</label>
         </div>
+        <h3>Shipping Information</h3>
 
-        <h3>Delivery Details</h3>
-        <input type="text" id="customerName" placeholder="Your Name" required>
-        <input type="text" id="contactNumber" placeholder="09XXXXXXXXX" required>
+<input
+  type="text"
+  id="fullName"
+  placeholder="Full Name (e.g. Juan Dela Cruz)"
+  required
+>
 
-        <label>Address</label><select id="barangay" required>
+<input
+  type="text"
+  id="street"
+  placeholder="House No., Street, Subdivision"
+  required
+>
+
+<select id="province" required>
+  <option value="">Select Province</option>
+  <option value="Quezon">Quezon</option>
+</select>
+
+<div class="row">
+  <select id="municipality" required>
+    <option value="">Select City / Municipality</option>
+    <option value="Lucban">Lucban</option>
+  </select>
+
+  <select id="barangay" required>
     <option value="">Select Barangay</option>
-    <option value="Bagumbayan">Bagumbayan</option>
-    <option value="Cahig">Cahig</option>
-    <option value="Gugo">Gugo</option>
-    <option value="Ibabang Ilog">Ibabang Ilog</option>
-    <option value="Kalawitan">Kalawitan</option>
-    <option value="Lilio">Lilio</option>
-    <option value="Loob">Loob</option>
-    <option value="Lusacan">Lusacan</option>
-    <option value="Malabanan">Malabanan</option>
-    <option value="Mangyan">Mangyan</option>
-    <option value="Mayorga">Mayorga</option>
-    <option value="Maysapan">Maysapan</option>
-    <option value="Pangol">Pangol</option>
-    <option value="Poblacion I">Poblacion I</option>
-    <option value="Poblacion II">Poblacion II</option>
-    <option value="San Antonio">San Antonio</option>
-    <option value="San Isidro">San Isidro</option>
-    <option value="San Roque">San Roque</option>
-    <option value="Santa Cruz">Santa Cruz</option>
-    <option value="Santa Filomena">Santa Filomena</option>
-    <option value="Santo Domingo">Santo Domingo</option>
-    <option value="Santo Niño">Santo Niño</option>
-    <option value="Sapang Kawayan">Sapang Kawayan</option>
-    <option value="Tangkay">Tangkay</option>
-</select>
+                <option value="Bagumbayan">Bagumbayan</option>
+                <option value="Cahig">Cahig</option>
+                <option value="Gugo">Gugo</option>
+                <option value="Ibabang Ilog">Ibabang Ilog</option>
+                <option value="Kalawitan">Kalawitan</option>
+                <option value="Lilio">Lilio</option>
+                <option value="Loob">Loob</option>
+                <option value="Lusacan">Lusacan</option>
+                <option value="Malabanan">Malabanan</option>
+                <option value="Mangyan">Mangyan</option>
+                <option value="Mayorga">Mayorga</option>
+                <option value="Maysapan">Maysapan</option>
+                <option value="Pangol">Pangol</option>
+                <option value="Poblacion I">Poblacion I</option>
+                <option value="Poblacion II">Poblacion II</option>
+                <option value="San Antonio">San Antonio</option>
+                <option value="San Isidro">San Isidro</option>
+                <option value="San Roque">San Roque</option>
+                <option value="Santa Cruz">Santa Cruz</option>
+                <option value="Santa Filomena">Santa Filomena</option>
+                <option value="Santo Domingo">Santo Domingo</option>
+                <option value="Santo Niño">Santo Niño</option>
+                <option value="Sapang Kawayan">Sapang Kawayan</option>
+                <option value="Tangkay">Tangkay</option>
+            </select>
+</div>
 
-<select id="sitio" required>
-    <option value="">Select Purok</option>
-    <option value="Purok 1">Purok 1</option>
-    <option value="Purok 2">Purok 2</option>
-    <option value="Purok 3">Purok 3</option>
-    <option value="Purok 4">Purok 4</option>
-    <option value="Purok 5">Purok 5</option>
-</select>
-        
+<input
+  type="text"
+  id="zip"
+  placeholder="ZIP Code (e.g. 4328)"
+  required
+>
+
+<input
+  type="text"
+  id="recipientPhone"
+  placeholder="Contact Number (09XXXXXXXXX)"
+  required
+>
 
         <h3>Payment Method</h3>
         <div class="options payment-options">
