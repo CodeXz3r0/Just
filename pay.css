@@ -1,0 +1,155 @@
+/* Page base */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #2e2e2e;
+}
+
+/* Main container */
+body > h3,
+body > input,
+body > select,
+body > .row,
+.options,
+#ewalletBox,
+#cardBox,
+.primary-btn {
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* Section titles */
+h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 6px;
+}
+
+/* Inputs & selects */
+input[type="text"],
+select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0 15px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+    background-color: #fdfdfd;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-color: #8a8a8a;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+}
+
+/* Row layout */
+.row {
+    display: flex;
+    gap: 12px;
+}
+
+.row select {
+    flex: 1;
+}
+
+/* Payment options */
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 15px auto 25px auto;
+}
+
+.options label {
+    flex: 1 1 45%;
+    padding: 12px 15px;
+    background: #f7f7f7;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.options label:hover {
+    background: #e8e8e8;
+    transform: translateY(-2px);
+}
+
+.options input[type="radio"] {
+    accent-color: #8a8a8a;
+}
+
+/* Payment boxes */
+#ewalletBox,
+#cardBox {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+#ewalletBox input,
+#cardBox input {
+    margin-bottom: 12px;
+}
+
+/* Confirm button */
+.primary-btn {
+    padding: 14px 35px;
+    border: none;
+    border-radius: 8px;
+    background-color: #9f9f9f;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-bottom: 40px;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Utility */
+.hidden {
+    display: none;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .options label {
+        flex: 1 1 100%;
+    }
+
+    body {
+        padding: 0 15px;
+    }
+}
+.payment-box {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.payment-box.active {
+    max-height: 500px; /* enough for all inputs */
+    opacity: 1;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none; /* keep for elements like receipt overlay */
+}

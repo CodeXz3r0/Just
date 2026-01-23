@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Treat a Cup | Payment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pay.css">
+</head>
+<body>
+
+<section class="order-box">
+    <h3>Shipping Information</h3>
+
+    <input type="text" id="fullName" placeholder="Full Name (e.g. Juan Dela Cruz)" required>
+    <input type="text" id="street" placeholder="House No., Street, Subdivision" required>
+
+    <select id="province" required>
+        <option value="">Select Province</option>
+        <option value="Quezon">Quezon</option>
+    </select>
+
+    <div class="row">
+        <select id="municipality" required>
+            <option value="">Select City / Municipality</option>
+            <option value="Lucban">Lucban</option>
+        </select>
+
+        <select id="barangay" required>
+            <option value="">Select Barangay</option>
+            <option value="Bagumbayan">Bagumbayan</option>
+            <option value="Cahig">Cahig</option>
+            <option value="Gugo">Gugo</option>
+            <option value="Ibabang Ilog">Ibabang Ilog</option>
+            <option value="Kalawitan">Kalawitan</option>
+            <option value="Lilio">Lilio</option>
+            <option value="Loob">Loob</option>
+            <option value="Lusacan">Lusacan</option>
+            <option value="Malabanan">Malabanan</option>
+            <option value="Mangyan">Mangyan</option>
+            <option value="Mayorga">Mayorga</option>
+            <option value="Maysapan">Maysapan</option>
+            <option value="Pangol">Pangol</option>
+            <option value="Poblacion I">Poblacion I</option>
+            <option value="Poblacion II">Poblacion II</option>
+            <option value="San Antonio">San Antonio</option>
+            <option value="San Isidro">San Isidro</option>
+            <option value="San Roque">San Roque</option>
+            <option value="Santa Cruz">Santa Cruz</option>
+            <option value="Santa Filomena">Santa Filomena</option>
+            <option value="Santo Domingo">Santo Domingo</option>
+            <option value="Santo Niño">Santo Niño</option>
+            <option value="Sapang Kawayan">Sapang Kawayan</option>
+            <option value="Tangkay">Tangkay</option>
+        </select>
+    </div>
+
+    <input type="text" id="zip" placeholder="ZIP Code (e.g. 4328)" required>
+    <input type="text" id="recipientPhone" placeholder="Contact Number (09XXXXXXXXX)" required>
+<h3>Payment Method</h3>
+<div class="options payment-options">
+    <label><input type="radio" name="payment" value="Cash" onclick="togglePayment()"> Cash on Delivery</label>
+    <label><input type="radio" name="payment" value="GCash" onclick="togglePayment()"> GCash</label>
+    <label><input type="radio" name="payment" value="PayMaya" onclick="togglePayment()"> PayMaya</label>
+    <label><input type="radio" name="payment" value="Card" onclick="togglePayment()"> Card</label>
+</div>
+
+<div id="ewalletBox" class="hidden payment-box">
+    <input type="text" id="ewalletNumber" placeholder="Mobile Number (09XXXXXXXXX)">
+</div>
+
+<div id="cardBox" class="hidden payment-box">
+    <input type="text" id="cardNumber" placeholder="Card Number (16 digits)">
+    <input type="text" id="expiry" placeholder="MM/YY">
+    <input type="text" id="cvv" placeholder="CVV">
+    <input type="text" id="location" placeholder="Billing Location (optional)">
+</div>
+
+<button type="button" class="primary-btn" onclick="submitOrder()">Confirm Order</button>
+
+</section>
+
+<!-- Receipt Overlay -->
+<div id="receiptOverlay" class="overlay hidden">
+    <div class="receipt">
+        <div id="receiptContent"></div>
+        <button onclick="closeReceipt()">Close</button>
+    </div>
+</div>
+
+<script src="pay.js"></script>
+</body>
+</html>
